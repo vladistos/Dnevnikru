@@ -2,6 +2,7 @@ package ru.vladik.dnevnikru.dnevnikapi
 
 import kotlinx.coroutines.coroutineScope
 import ru.vladik.dnevnikru.AppConstants
+import ru.vladik.dnevnikru.dnevnikapi.DiaryApi.Companion
 import ru.vladik.dnevnikru.dnevnikapi.db.models.ApiUserImpl
 import ru.vladik.dnevnikru.dnevnikapi.exceptions.NoSuchUserException
 import ru.vladik.dnevnikru.dnevnikapi.exceptions.NullResponseException
@@ -16,10 +17,40 @@ import kotlin.coroutines.resumeWithException
 import kotlin.coroutines.suspendCoroutine
 import retrofit2.Response as RetrofitResponse
 
+/**
+ * #Данный класс предоставляет API для взаимодействия с сайтом dnevnik.ru.
+
+    * **Поддерживается работа со следующими функциями**:
+
+    *   - Авторизация и получение токена
+    *   - Инициализация API для конкретного пользователя
+    *   - Получение информации о пользователе (контекст)
+    *   - Получение оценок за определенный период
+    *   - Получение расписания уроков за определенный период
+    *   - Получение ленты событий пользователя
+    *   - Получение дневника пользователя
+    * @constructor **Является приватным.** Создает объект [DiaryApi] для работы с сайтом [Дневник.ру](https://dnevnik.ru/)
+ * Для получения экземпляра класса извне нужно воспользоваться [Companion]
+
+    * @param user объект типа [ApiUserImpl], содержащий токен пользователя, логин и пароль
+ */
 class DiaryApi private constructor(var user: ApiUserImpl) {
 
-    private var method: DnevnikApiCaller = DnevnikApiProvider.provide(user.token)
+    /**
+        Внутренняя переменная является экземпляром [DnevnikApiCaller] для вызова методов API.
+        Инициализируется при создании объекта DiaryApi.
+     */
 
+    private var mMethod: DnevnikApiCaller = DnevnikApiProvider.provide(user.token)
+
+
+    /**
+     * ###Внутренний метод для обработки ответов сервера. Обрабатывает некоторые из возможных ошибок.
+     * Является расширением [Continuation]. Возвращает значение в случае, если ответ валиден, в ином случае
+     * *бросает* соответствующую ошибку.
+     * @param T тип данных ответа.
+     * @param response [RetrofitResponse] с типом [T], который будет обработан.
+     */
     private inline fun <reified T> Continuation<T>.process(response: RetrofitResponse<T>) {
         response.body()?.let { resp ->
             resume(resp)
@@ -32,7 +63,20 @@ class DiaryApi private constructor(var user: ApiUserImpl) {
         resumeWithException(NullResponseException("Null response while getting ${T::class.qualifiedName}"))
     }
 
+    /**
+    * ###Объект-компаньон для создания объекта [DiaryApi].
+    */
     companion object {
+
+        /**
+            * ###Статический метод для создания объекта DiaryApi на основе логина и пароля пользователя.
+            * Возвращает объект [DiaryApi] для работы с API сайта.
+
+            * @param login логин пользователя
+            * @param password пароль пользователя
+            * @return объект [DiaryApi] для работы с API сайта.
+        */
+
         suspend fun construct(login: String, password: String)
         = coroutineScope {
             val token = DnevnikApiProvider.provideToken(login, password)
@@ -43,11 +87,28 @@ class DiaryApi private constructor(var user: ApiUserImpl) {
 
         }
 
+        /**
+        * ###Статический метод для создания объекта [DiaryApi] на основе объекта типа [ApiUserImpl].
+        * Возвращает объект [DiaryApi] для работы с API сайта.
+        * @param apiUser объект типа [ApiUserImpl], содержащий токен пользователя, логин и пароль.
+        * @return объект [DiaryApi] для работы с API сайта.
+         */
+
         suspend fun forUser(apiUser: ApiUserImpl) = coroutineScope {
             return@coroutineScope DiaryApi(apiUser)
         }
     }
 
+    /**
+
+    * ###Метод инициализирует объект [ApiUserImpl] для пользователя с помощью объекта [PersonChooser] и обновляет данные пользователя.
+    *
+    * @param personChooser объект, который используется для выбора контекстного пользователя
+
+    * @throws ResError если произошла ошибка при получении контекста пользователя
+    * @throws NullResponseException если контекст пользователя не был получен
+    * @throws NoSuchUserException если контекстный пользователь не найден
+     */
     suspend fun init(personChooser: PersonChooser) = coroutineScope {
         val selfContextV2 = getSelfContext()
         if (selfContextV2.errType != null) {
@@ -61,58 +122,115 @@ class DiaryApi private constructor(var user: ApiUserImpl) {
         user.refreshData(person)
     }
 
+    /**
+     * ### Реализация версии одного из методов как корутины [DnevnikApiCaller]
+     * @see DnevnikApiCaller.getSelfContext
+     * @see <a href="https://kotlinlang.org/docs/coroutines-guide.html">Оффициальная документация по карутинам.</a>
+     */
     suspend fun getUserContext(uId: Long) = suspendCoroutine {
             continuation ->
-        method.getContext(uId).enqueue {
+        mMethod.getSelfContext(uId).enqueue {
             continuation.process(it)
         }
     }
 
+    /**
+     * ### Реализация версии одного из методов как корутины [DnevnikApiCaller]
+     * @see DnevnikApiCaller.getRecentMarks
+     * @see <a href="https://kotlinlang.org/docs/coroutines-guide.html">Оффициальная документация по карутинам.</a>
+     */
     suspend fun getRecentMarks(pId: Long, gId: Long) = suspendCoroutine { continuation ->
-        method.getRecentMarks(pId, gId).enqueue {
+        mMethod.getRecentMarks(pId, gId).enqueue {
             continuation.process(it)
         }
     }
 
+    /**
+     * ### Реализация версии одного из методов как корутины [DnevnikApiCaller]
+     *
+     * **Вместо форматированной строки для начала и конца периода принимает экземпляр [Date]**
+     * @see DnevnikApiCaller.getMarksForPeriod
+     * @see <a href="https://kotlinlang.org/docs/coroutines-guide.html">Оффициальная документация по карутинам.</a>
+     */
     suspend fun getMarksForPeriod(personId: Long, groupId: Long, dateStart: Date, dateEnd: Date) =
         suspendCoroutine { continuation ->
             val start = AppConstants.API_V2_DATE_FORMAT.format(dateStart)
             val end = AppConstants.API_V2_DATE_FORMAT.format(dateEnd)
-            method.getMarksForPeriod(personId, groupId, start, end).enqueue { continuation.process(it) }
+            mMethod.getMarksForPeriod(personId, groupId, start, end).enqueue { continuation.process(it) }
         }
 
+    /**
+     * ### Реализация версии одного из методов как корутины [DnevnikApiCaller]
+     *
+     * **Вместо форматированной строки для начала и конца периода принимает экземпляр [Date]**
+     * @see DnevnikApiCaller.getLessonsForPeriod
+     * @see <a href="https://kotlinlang.org/docs/coroutines-guide.html">Оффициальная документация по карутинам.</a>
+     */
     suspend fun getLessonsForPeriod(groupId: Long, dateStart: Date, dateEnd: Date) =
         suspendCoroutine { continuation ->
             val start = AppConstants.API_V2_DATE_FORMAT.format(dateStart)
             val end = AppConstants.API_V2_DATE_FORMAT.format(dateEnd)
-            method.getLessonsForPeriod(groupId, start, end).enqueue { continuation.process(it) }
+            mMethod.getLessonsForPeriod(groupId, start, end).enqueue { continuation.process(it) }
         }
 
+    /**
+     * ### Реализация версии одного из методов как корутины [DnevnikApiCaller]
+     * @see DnevnikApiCaller.getSelfContext
+     * @see <a href="https://kotlinlang.org/docs/coroutines-guide.html">Оффициальная документация по карутинам.</a>
+     */
     suspend fun getSelfContext() = suspendCoroutine {
             continuation ->
-        method.getContext().enqueue {
+        mMethod.getSelfContext().enqueue {
             continuation.process(it)
         }
     }
 
+    /**
+     * ### Реализация версии одного из методов как корутины [DnevnikApiCaller]
+     * @see DnevnikApiCaller.getFeed
+     * @see <a href="https://kotlinlang.org/docs/coroutines-guide.html">Оффициальная документация по карутинам.</a>
+     */
     suspend fun getUserFeed(pId: Long, gId: Long) = suspendCoroutine { continuation ->
-        method.getFeed(pId, gId).enqueue {
+        mMethod.getFeed(pId, gId).enqueue {
             continuation.process(it)
         }
     }
 
+    /**
+     * ### Реализация версии одного из методов как корутины [DnevnikApiCaller]
+     * @see DnevnikApiCaller.getUserDayBook
+     * @see <a href="https://kotlinlang.org/docs/coroutines-guide.html">Оффициальная документация по карутинам.</a>
+     */
     suspend fun getUserDayBook(personId: Long, schoolId: Long, groupId: Long, id: String?,
                                loadType: DnevnikApiCaller.ScheduleLoadType?) = suspendCoroutine { continuation ->
-        method.getUserDayBook(personId, schoolId, groupId, id, loadType?.text).enqueue {
+        mMethod.getUserDayBook(personId, schoolId, groupId, id, loadType?.text).enqueue {
             continuation.process(it)
         }
     }
 
+    /**
+     * ##Интерфейс для выбора персоны в случае, если к пользователю привязано более одной [ContextPersonV7].
+     */
     interface PersonChooser {
+        /**
+         * ### Функция для выбора персоны.
+         * @param persons список персон из которых придется выбирать.
+         * @return [ContextPersonV7] единственный выбранный экземпляр.
+         */
         suspend fun choose(persons: List<ContextPersonV7>): ContextPersonV7
     }
 
+    /**
+     * ## Базовая реализация интерфейса [PersonChooser], выбирает персону по [id], если он известен заранее.
+     *
+     * @param id Идентификатор пользователя, которого нужно выбрать.
+     * @see PersonChooser
+     */
     class PersonChooserById(val id: Long) : PersonChooser {
+        /**
+         * @throws NoSuchUserException в случае, если в списке нет нужного пользователя.
+         * @see PersonChooser.choose
+         */
         override suspend fun choose(persons: List<ContextPersonV7>): ContextPersonV7 {
             val user = persons.find { person -> person.personId == id }
             return user ?: throw NoSuchUserException()
