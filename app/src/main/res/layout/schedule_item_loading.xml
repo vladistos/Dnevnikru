@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        
+        <View
+            android:id="@+id/view"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bookmark_bg"
+            android:layout_width="15dp"
+            android:layout_height="10dp"/>
+
+        <TextView
+            android:id="@+id/lesson_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/view"
+            android:layout_centerVertical="true"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"
+            android:textSize="15sp"
+            android:text="1."/>
+
+        <com.faltenreich.skeletonlayout.SkeletonLayout
+            android:id="@+id/skeleton1"
+            android:layout_width="wrap_content"
+            android:gravity="end"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/lesson_number"
+            android:layout_toStartOf="@id/skeleton2"
+            android:layout_marginHorizontal="10dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_gravity="end"
+                android:textSize="13sp"
+                android:id="@+id/lesson_place"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="11 кабинет"/>
+
+        </com.faltenreich.skeletonlayout.SkeletonLayout>
+
+        <com.faltenreich.skeletonlayout.SkeletonLayout
+            android:layout_width="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="5dp"
+            android:id="@id/skeleton2"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="10:10"
+                android:textSize="13sp"/>
+        </com.faltenreich.skeletonlayout.SkeletonLayout>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:background="@drawable/schedule_item_body"
+        android:elevation="10dp"
+        android:layout_margin="10dp"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <com.faltenreich.skeletonlayout.SkeletonLayout
+            android:id="@+id/skeleton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <View
+                        android:id="@+id/lesson_subject_title"
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_height="15dp"/>
+
+                    <View
+                        android:layout_alignParentStart="true"
+                        android:textSize="13sp"
+                        android:layout_below="@id/lesson_subject_title"
+                        android:layout_width="100dp"
+                        android:layout_height="14dp"
+                        android:id="@+id/lesson_theme"/>
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:id="@+id/lesson_marks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/lesson_home_task"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp" />
+
+                <View
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp" />
+
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <io.getstream.avatarview.AvatarView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"/>
+
+                    <View
+                        android:layout_marginStart="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="15dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.faltenreich.skeletonlayout.SkeletonLayout>
+    </FrameLayout>
+    
+</LinearLayout>

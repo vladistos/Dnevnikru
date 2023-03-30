@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ru.vladik.dnevnikru.MainActivity">
+    <item
+        android:id="@id/mainFragment"
+        android:icon="@drawable/home_svgrepo_com"
+        android:title="@string/main_page"
+        />
+
+    <item
+        android:id="@id/scheduleFragment"
+        android:icon="@drawable/book_svgrepo_com__2_"
+        android:title="@string/schedule"
+        />
+</menu>

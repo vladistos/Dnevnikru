@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="92dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="10dp"
+    android:layout_margin="10dp"
+    android:layout_height="98dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="?selectableItemBackground"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_marginTop="10dp"
+            android:id="@+id/mark_text_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_width="60dp"
+            android:layout_height="60dp">
+
+            <View
+                android:id="@+id/background_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/mark_text_background"/>
+
+            <TextView
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:padding="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/mark_text"/>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/mark_subject"
+            android:layout_marginBottom="5dp"
+            android:maxLines="1"
+            android:paddingHorizontal="5dp"
+            android:ellipsize="end"
+            android:layout_alignParentBottom="true"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

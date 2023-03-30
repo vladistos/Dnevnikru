@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        
+        <View
+            android:id="@+id/view"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bookmark_bg"
+            android:layout_width="15dp"
+            android:layout_height="10dp"/>
+
+        <TextView
+            android:id="@+id/lesson_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/view"
+            android:layout_centerVertical="true"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"
+            android:textSize="15sp"
+            android:text="1."/>
+
+
+        <TextView
+            android:id="@+id/lesson_subject_title"
+            android:text="Maths"
+            android:textStyle="bold"
+            android:layout_toEndOf="@id/lesson_number"
+            android:layout_marginStart="10dp"
+            android:layout_centerVertical="true"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:gravity="end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/lesson_subject_title"
+            android:layout_marginHorizontal="10dp"
+            android:textSize="13sp"
+            android:layout_toStartOf="@id/lesson_time"
+            android:id="@+id/lesson_place" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/lesson_time"
+            android:textSize="13sp"/>
+        
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/lesson_info_layout"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:background="@drawable/schedule_item_body"
+        android:layout_width="match_parent"
+        android:elevation="10dp"
+        android:padding="10dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/teacher"
+                android:layout_marginEnd="10dp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/lesson_teacher_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_marginBottom="5dp"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/theme"
+                android:layout_marginEnd="10dp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:textSize="13sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:id="@+id/lesson_theme"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginBottom="5dp"
+            android:id="@+id/lesson_marks_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/marks"
+                android:layout_marginEnd="10dp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:id="@+id/lesson_marks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/lesson_home_task_layout"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/schedule_item_body"
+        android:layout_width="match_parent"
+        android:elevation="10dp"
+        android:padding="10dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hometask"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/lesson_home_task"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>
