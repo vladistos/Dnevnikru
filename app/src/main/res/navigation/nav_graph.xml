@@ -6,14 +6,14 @@
     app:startDestination="@id/mainFragment">
     <fragment
         android:id="@+id/mainFragment"
-        android:name="ru.vladik.dnevnikru.MainFragment"
+        android:name="ru.vladik.opendiary.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main">
     </fragment>
     <fragment
         tools:layout="@layout/fragment_schedule"
         android:id="@+id/scheduleFragment"
-        android:name="ru.vladik.dnevnikru.fragments.ScheduleFragment"
+        android:name="ru.vladik.opendiary.fragments.ScheduleFragment"
         android:label="ScheduleFragment" >
     </fragment>
 </navigation>

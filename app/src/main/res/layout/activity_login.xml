@@ -14,8 +14,7 @@
         android:layout_height="250dp"
         android:gravity="center"
         android:text="@string/diary"
-        android:textSize="40sp"
-        android:textStyle="bold" />
+        android:textSize="40sp" />
 
     <RelativeLayout
         android:layout_width="match_parent"

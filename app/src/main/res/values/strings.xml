@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Dnevnikru</string>
+    <string name="app_name">Open diary</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -31,7 +31,7 @@
     <string name="no_lesson">Нет урока</string>
     <string name="schedule">Расписание</string>
     <string name="main_page">Гланая</string>
-    <string name="diary">Дневник</string>
+    <string name="diary">Open diary</string>
 
 
     <string-array name="days_of_week_short">
