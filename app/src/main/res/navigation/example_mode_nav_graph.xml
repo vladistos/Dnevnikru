@@ -2,18 +2,19 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
+    android:id="@+id/example_mode_nav_graph"
     app:startDestination="@id/mainFragment">
     <fragment
         android:id="@+id/mainFragment"
-        android:name="ru.vladik.opendiary.fragments.MainFragment"
+        android:name="ru.vladik.opendiary.example.fragments.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main">
     </fragment>
     <fragment
-        tools:layout="@layout/fragment_schedule"
         android:id="@+id/scheduleFragment"
-        android:name="ru.vladik.opendiary.fragments.ScheduleFragment"
+        tools:layout="@layout/fragment_schedule"
+        android:name="ru.vladik.opendiary.example.fragments.ScheduleFragment"
         android:label="ScheduleFragment" >
     </fragment>
+
 </navigation>

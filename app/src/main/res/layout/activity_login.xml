@@ -65,19 +65,30 @@
             android:height="50dp"
             android:text="@string/LoginButtonText" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/button1"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_test"
             android:layout_width="match_parent"
+            style="@style/Widget.Material3.Button.TextButton"
             android:layout_height="wrap_content"
             android:layout_below="@+id/button"
-            app:fontFamily="sans-serif-light"
-            android:gravity="center"
-            android:text="@string/forgot_login_text"
-            android:textColor="#3F00DD"
-            android:textSize="15sp" />
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:text="@string/continue_to_test" />
+
+<!--        <com.google.android.material.textview.MaterialTextView-->
+<!--            android:id="@+id/button1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/button_test"-->
+<!--            app:fontFamily="sans-serif-light"-->
+<!--            android:gravity="center"-->
+<!--            android:text="@string/forgot_login_text"-->
+<!--            android:textColor="#3F00DD"-->
+<!--            android:textSize="15sp" />-->
     </RelativeLayout>
 
     <TextView
+        android:id="@+id/author_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

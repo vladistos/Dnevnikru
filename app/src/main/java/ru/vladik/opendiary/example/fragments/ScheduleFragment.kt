@@ -1,4 +1,4 @@
-package ru.vladik.opendiary.fragments
+package ru.vladik.opendiary.example.fragments
 
 import android.app.DatePickerDialog
 import android.os.Bundle
@@ -11,22 +11,14 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.OnFlingListener
-import com.faltenreich.skeletonlayout.createSkeleton
 import ru.vladik.opendiary.R
-import ru.vladik.opendiary.adapters.recyclerview.CustomSkeleton
 import ru.vladik.opendiary.adapters.recyclerview.DayPickerAdapter
 import ru.vladik.opendiary.adapters.recyclerview.ScheduleAdapter
-import ru.vladik.opendiary.adapters.recyclerview.applyCustomSkeleton
 import ru.vladik.opendiary.databinding.FragmentScheduleBinding
-import ru.vladik.opendiary.databinding.ScheduleItemLoadingBinding
 import ru.vladik.opendiary.dnevnikapi.DiaryApi
 import ru.vladik.opendiary.dnevnikapi.models.extended.ExtendedWeek
-import ru.vladik.opendiary.dnevnikapi.models.v2.LessonV2
-import ru.vladik.opendiary.dnevnikapi.models.v2.MarkV2
-import ru.vladik.opendiary.dnevnikapi.models.v7.ScheduleV7
+import ru.vladik.opendiary.example.datasets.ExampleDatasets
 import ru.vladik.opendiary.util.DateHelper
-import ru.vladik.opendiary.viewmodels.errorhandling.DiaryApiResourceListener
-import ru.vladik.opendiary.viewmodels.errorhandling.ResourceObserver
 import ru.vladik.opendiary.viewmodels.fragments.FragmentScheduleViewModel
 import java.util.*
 import kotlin.math.abs
@@ -67,7 +59,7 @@ class ScheduleFragment : Fragment() {
         scheduleRecyclerView.layoutManager =
             LinearLayoutManager(requireContext())
 
-        val scheduleAdapter = ScheduleAdapter()
+        val scheduleAdapter = ScheduleAdapter(ExampleDatasets.ExampleSchedule)
         val dayPickerAdapter = DayPickerAdapter(mViewModel.week)
 
         scheduleRecyclerView.adapter = scheduleAdapter
@@ -95,85 +87,8 @@ class ScheduleFragment : Fragment() {
             scrollWeek(false, dayPickerAdapter, mViewModel.incrementViewingWeek().toTypedArray())
         }
 
-
-        mViewModel.getDiaryForLastUser(requireContext())
-        mViewModel.prevWeekStartToGetNext.observe(requireActivity()) {
-            getScheduleIfNeeded()
-        }
-        mViewModel.diaryApi.observeValue(requireActivity(), DiaryApiResourceListener(requireActivity()) { api, _ ->
-            this@ScheduleFragment.api = api
-            getScheduleIfNeeded()
-        })
-        mViewModel.selectedDay.observe(requireActivity()) { refreshDay(scheduleAdapter) }
-
-
-        mViewModel.schedule.observeValue(requireActivity(), ScheduleObserver(scheduleAdapter))
-        mViewModel.lessonsV2.observeValue(requireActivity(), LessonsV2Observer(scheduleAdapter))
-        mViewModel.marksV2ByLessonId.observeValue(requireActivity(), MarksObserver(scheduleAdapter))
     }
 
-    private inner class MarksObserver(val scheduleAdapter: ScheduleAdapter) : ResourceObserver<Map<Long, ArrayList<MarkV2>>>() {
-        override fun onReady(v: Map<Long, ArrayList<MarkV2>>) {
-            this@ScheduleFragment.resp.marksV2 = v
-            refreshDay(scheduleAdapter)
-        }
-    }
-
-    private inner class LessonsV2Observer(val scheduleAdapter: ScheduleAdapter) : ResourceObserver<Map<Long, LessonV2>>() {
-        override fun onReady(v: Map<Long, LessonV2>) {
-            resp.lessonsV2 = v
-            refreshDay(scheduleAdapter)
-        }
-    }
-
-    private inner class ScheduleObserver(val scheduleAdapter: ScheduleAdapter) : ResourceObserver<ScheduleV7>() {
-
-        private var mSkeleton: CustomSkeleton<ScheduleItemLoadingBinding>? = null
-
-        override fun onReady(v: ScheduleV7) = mBinding.scheduleRecyclerView.run {
-            if (v.weeks.isNullOrEmpty() || v.weeks[0].days.isNullOrEmpty() ||
-                requireNotNull(v.weeks[0].days).size < 7) return@run
-            this@ScheduleFragment.resp.days = requireNotNull(v.weeks[0].days)
-            refreshDay(scheduleAdapter) {
-                mSkeleton?.showOriginal()
-            }
-        }
-
-        override fun onProgress(p: Float) {
-            if (mSkeleton == null) {
-                mSkeleton =
-                    mBinding.scheduleRecyclerView.applyCustomSkeleton({ layoutInflater, parent ->
-                        ScheduleItemLoadingBinding.inflate(layoutInflater, parent, false)
-                    }, { holder ->
-                        holder.binding.apply {
-                            lessonNumber.createSkeleton().showSkeleton()
-                            skeleton1.showSkeleton()
-                            skeleton2.showSkeleton()
-                            skeleton3.showSkeleton()
-                        }
-                    })
-            }
-            mSkeleton?.showSkeleton()
-        }
-    }
-
-    private fun refreshDay(adapter: ScheduleAdapter, post: (() -> Unit)? = null) = mBinding.scheduleRecyclerView.run {
-        if (resp.days == null) return@run
-        val days = requireNotNull(resp.extendedDays)
-        val dayNumber = mViewModel.selectedDay.value!!.ruIndex - 1
-        adapter.replaceData(*days[dayNumber].getExtendedLessons(resp.lessonsV2, resp.marksV2).orEmpty().toTypedArray(), callback = post)
-    }
-
-    private fun getScheduleIfNeeded() {
-        if (currentTimestamp == mViewModel.prevWeekStartToGetNext.value || api == null)
-            return
-        currentTimestamp = mViewModel.prevWeekStartToGetNext.value.toString()
-        val api = requireNotNull(api)
-
-        mViewModel.getSchedule(api)
-        mViewModel.getV2Lessons(api)
-        mViewModel.getV2Marks(api)
-    }
 
     private fun scrollWeek(toLeft: Boolean, adapter: DayPickerAdapter, week: Array<DateHelper.Day>) = mBinding.run {
         if (toLeft) adapter.insertDataToBeginning(*week) {
@@ -213,7 +128,7 @@ class ScheduleFragment : Fragment() {
             if (menuItem.itemId == R.id.calendar_item) {
                 val day = requireNotNull(mViewModel.selectedDay.value).calendarDay
                 val picker = DatePickerDialog(requireContext(), mListener, day.get(Calendar.YEAR),
-                day.get(Calendar.MONTH), day.get(Calendar.DAY_OF_MONTH))
+                    day.get(Calendar.MONTH), day.get(Calendar.DAY_OF_MONTH))
                 picker.show()
             }
             return true

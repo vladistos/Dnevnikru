@@ -32,6 +32,8 @@
     <string name="schedule">Расписание</string>
     <string name="main_page">Гланая</string>
     <string name="diary">Open diary</string>
+    <string name="continue_to_test">Продолжить как тестовый пользователь</string>
+    <string name="test_mode">TestMode</string>
 
 
     <string-array name="days_of_week_short">

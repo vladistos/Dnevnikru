@@ -25,7 +25,8 @@ import ru.vladik.opendiary.ext.nullIfEmpty
 Адаптер содержит приватные методы [getLessonHoursString], [getMarksString], [getMarksColor]
 для обработки значений [DaybookLessonNoPayment] и списка [List] из [MarkV2].
  */
-class ScheduleAdapter : RecyclerDifferViewListAdapter<ScheduleAdapter.ViewHolder, ExtendedLesson>() {
+class ScheduleAdapter(val data: MutableList<ExtendedLesson>? = null) :
+    RecyclerDifferViewListAdapter<ScheduleAdapter.ViewHolder, ExtendedLesson>(data) {
 
     inner class ViewHolder(val binding: ScheduleItemBinding): RecyclerView.ViewHolder(binding.root)
 

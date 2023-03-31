@@ -8,6 +8,7 @@ import ru.vladik.opendiary.databinding.ActivityLoginBinding
 import ru.vladik.opendiary.dialogs.PersonPickerDialog
 import ru.vladik.opendiary.dnevnikapi.DiaryApi
 import ru.vladik.opendiary.dnevnikapi.models.v7.ContextPersonV7
+import ru.vladik.opendiary.example.activities.MainActivityExample
 import ru.vladik.opendiary.ext.startActivity
 import ru.vladik.opendiary.viewmodels.DiaryGetViewModel
 import ru.vladik.opendiary.viewmodels.errorhandling.Resource
@@ -63,6 +64,9 @@ class LoginActivity : AppCompatActivity() {
         mBinding.button.setOnClickListener {
             onLoginButtonClick(it)
         }
+        mBinding.buttonTest.setOnClickListener {
+            startTest()
+        }
     }
 
     /**
@@ -101,4 +105,10 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * ### Запускает тестовую [MainActivityExample]
+     */
+    private fun startTest() {
+        startActivity(MainActivityExample::class.java, true)
+    }
 }

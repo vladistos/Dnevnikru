@@ -1,4 +1,4 @@
-package ru.vladik.opendiary
+package ru.vladik.opendiary.fragments
 
 import android.os.Bundle
 import android.view.View
