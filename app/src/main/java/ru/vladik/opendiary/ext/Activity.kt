@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.util.TypedValue
+import ru.vladik.opendiary.app.OpenDiary
 
 /**
  * ###Метод для более удобного запуска одной [Activity] из другой
@@ -25,3 +26,7 @@ fun Activity.startActivity(activity: Class<out Activity>, finish: Boolean) {
  */
 fun Context.getDp(dp: Int) =
     TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp.toFloat(), this.resources.displayMetrics)
+
+
+val Context.myApplication
+    get() = (this.applicationContext as OpenDiary)

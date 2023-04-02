@@ -9,6 +9,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 import ru.vladik.opendiary.R
 import ru.vladik.opendiary.databinding.ActivityMainBinding
+import ru.vladik.opendiary.ext.myApplication
 
 
 /**
@@ -30,9 +31,10 @@ class MainActivity : AppCompatActivity() {
 
     * @param savedInstanceState сохраненное состояние экрана.
      */
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        myApplication.isInExampleMode = false
 
         ActivityMainBinding.inflate(LayoutInflater.from(this)).apply {
             setContentView(root)
