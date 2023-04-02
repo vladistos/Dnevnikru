@@ -71,7 +71,8 @@ $dokka.location:ru.vladik.opendiary.adapters.recyclerview/ScheduleAdapter.ViewHo
 $dokka.location:ru.vladik.opendiary.adapters.recyclerview/ScheduleAdapter.ViewHolder/ViewHolder/#[Error type: Unresolved type for ScheduleItemBinding]/PointingToDeclaration/-open diary/ru.vladik.opendiary.adapters.recyclerview/-schedule-adapter/-view-holder/-view-holder.html
 $dokka.location:ru.vladik.opendiary.adapters.recyclerview/ScheduleAdapter.ViewHolder/binding/#/PointingToDeclaration/-open diary/ru.vladik.opendiary.adapters.recyclerview/-schedule-adapter/-view-holder/binding.html
 $dokka.location:ru.vladik.opendiary.adapters.recyclerview/ScheduleAdapter///PointingToDeclaration/-open diary/ru.vladik.opendiary.adapters.recyclerview/-schedule-adapter/index.html
-$dokka.location:ru.vladik.opendiary.adapters.recyclerview/ScheduleAdapter/ScheduleAdapter/#/PointingToDeclaration/-open diary/ru.vladik.opendiary.adapters.recyclerview/-schedule-adapter/-schedule-adapter.html
+$dokka.location:ru.vladik.opendiary.adapters.recyclerview/ScheduleAdapter/ScheduleAdapter/#kotlin.collections.MutableList[ru.vladik.opendiary.dnevnikapi.models.extended.ExtendedLesson]?/PointingToDeclaration/-open diary/ru.vladik.opendiary.adapters.recyclerview/-schedule-adapter/-schedule-adapter.html
+$dokka.location:ru.vladik.opendiary.adapters.recyclerview/ScheduleAdapter/data/#/PointingToDeclaration/-open diary/ru.vladik.opendiary.adapters.recyclerview/-schedule-adapter/data.html
 $dokka.location:ru.vladik.opendiary.adapters.recyclerview/ScheduleAdapter/onBindViewHolder/#ru.vladik.opendiary.adapters.recyclerview.ScheduleAdapter.ViewHolder#kotlin.Int/PointingToDeclaration/-open diary/ru.vladik.opendiary.adapters.recyclerview/-schedule-adapter/on-bind-view-holder.html
 $dokka.location:ru.vladik.opendiary.adapters.recyclerview/ScheduleAdapter/onCreateViewHolder/#android.view.ViewGroup#kotlin.Int/PointingToDeclaration/-open diary/ru.vladik.opendiary.adapters.recyclerview/-schedule-adapter/on-create-view-holder.html
 $dokka.location:ru.vladik.opendiary.adapters.recyclerview/SkeletonAdapter.Companion///PointingToDeclaration/-open diary/ru.vladik.opendiary.adapters.recyclerview/-skeleton-adapter/-companion/index.html
@@ -86,6 +87,10 @@ $dokka.location:ru.vladik.opendiary.adapters.recyclerview/SkeletonAdapter/custom
 $dokka.location:ru.vladik.opendiary.adapters.recyclerview/SkeletonAdapter/getItemCount/#/PointingToDeclaration/-open diary/ru.vladik.opendiary.adapters.recyclerview/-skeleton-adapter/get-item-count.html
 $dokka.location:ru.vladik.opendiary.adapters.recyclerview/SkeletonAdapter/onBindViewHolder/#ru.vladik.opendiary.adapters.recyclerview.SkeletonAdapter.ViewHolder[TypeParam(bounds=[androidx.viewbinding.ViewBinding])]#kotlin.Int/PointingToDeclaration/-open diary/ru.vladik.opendiary.adapters.recyclerview/-skeleton-adapter/on-bind-view-holder.html
 $dokka.location:ru.vladik.opendiary.adapters.recyclerview/SkeletonAdapter/onCreateViewHolder/#android.view.ViewGroup#kotlin.Int/PointingToDeclaration/-open diary/ru.vladik.opendiary.adapters.recyclerview/-skeleton-adapter/on-create-view-holder.html
+$dokka.location:ru.vladik.opendiary.app////PointingToDeclaration/-open diary/ru.vladik.opendiary.app/index.html
+$dokka.location:ru.vladik.opendiary.app/OpenDiary///PointingToDeclaration/-open diary/ru.vladik.opendiary.app/-open-diary/index.html
+$dokka.location:ru.vladik.opendiary.app/OpenDiary/OpenDiary/#/PointingToDeclaration/-open diary/ru.vladik.opendiary.app/-open-diary/-open-diary.html
+$dokka.location:ru.vladik.opendiary.app/OpenDiary/isInExampleMode/#/PointingToDeclaration/-open diary/ru.vladik.opendiary.app/-open-diary/is-in-example-mode.html
 $dokka.location:ru.vladik.opendiary.dialogs////PointingToDeclaration/-open diary/ru.vladik.opendiary.dialogs/index.html
 $dokka.location:ru.vladik.opendiary.dialogs/PersonPickerDialog///PointingToDeclaration/-open diary/ru.vladik.opendiary.dialogs/-person-picker-dialog/index.html
 $dokka.location:ru.vladik.opendiary.dialogs/PersonPickerDialog/PersonPickerDialog/#android.content.Context#kotlin.collections.MutableList[ru.vladik.opendiary.dnevnikapi.models.v7.ContextPersonV7]#kotlin.Function1[ru.vladik.opendiary.dnevnikapi.models.v7.ContextPersonV7,kotlin.Unit]/PointingToDeclaration/-open diary/ru.vladik.opendiary.dialogs/-person-picker-dialog/-person-picker-dialog.html
@@ -840,6 +845,35 @@ $dokka.location:ru.vladik.opendiary.dnevnikapi/ResponseListener///PointingToDecl
 $dokka.location:ru.vladik.opendiary.dnevnikapi/ResponseListener/ResponseListener/#kotlin.Function1[TypeParam(bounds=[kotlin.Any?])?,kotlin.Unit]#kotlin.Function1[kotlin.Throwable,kotlin.Unit]?/PointingToDeclaration/-open diary/ru.vladik.opendiary.dnevnikapi/-response-listener/-response-listener.html
 $dokka.location:ru.vladik.opendiary.dnevnikapi/ResponseListener/onFailure/#retrofit2.Call[TypeParam(bounds=[kotlin.Any?])]#kotlin.Throwable/PointingToDeclaration/-open diary/ru.vladik.opendiary.dnevnikapi/-response-listener/on-failure.html
 $dokka.location:ru.vladik.opendiary.dnevnikapi/ResponseListener/onResponse/#retrofit2.Call[TypeParam(bounds=[kotlin.Any?])]#retrofit2.Response[TypeParam(bounds=[kotlin.Any?])]/PointingToDeclaration/-open diary/ru.vladik.opendiary.dnevnikapi/-response-listener/on-response.html
+$dokka.location:ru.vladik.opendiary.example.activities////PointingToDeclaration/-open diary/ru.vladik.opendiary.example.activities/index.html
+$dokka.location:ru.vladik.opendiary.example.activities/MainActivityExample///PointingToDeclaration/-open diary/ru.vladik.opendiary.example.activities/-main-activity-example/index.html
+$dokka.location:ru.vladik.opendiary.example.activities/MainActivityExample/MainActivityExample/#/PointingToDeclaration/-open diary/ru.vladik.opendiary.example.activities/-main-activity-example/-main-activity-example.html
+$dokka.location:ru.vladik.opendiary.example.datasets////PointingToDeclaration/-open diary/ru.vladik.opendiary.example.datasets/index.html
+$dokka.location:ru.vladik.opendiary.example.datasets/ExampleDatasets.Subjects.ENGLISH///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-open diary/ru.vladik.opendiary.example.datasets/-example-datasets/-subjects/-e-n-g-l-i-s-h/index.html
+$dokka.location:ru.vladik.opendiary.example.datasets/ExampleDatasets.Subjects.HISTORY///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-open diary/ru.vladik.opendiary.example.datasets/-example-datasets/-subjects/-h-i-s-t-o-r-y/index.html
+$dokka.location:ru.vladik.opendiary.example.datasets/ExampleDatasets.Subjects.IT_TECHNOLOGIES///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-open diary/ru.vladik.opendiary.example.datasets/-example-datasets/-subjects/-i-t_-t-e-c-h-n-o-l-o-g-i-e-s/index.html
+$dokka.location:ru.vladik.opendiary.example.datasets/ExampleDatasets.Subjects.MATHS///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-open diary/ru.vladik.opendiary.example.datasets/-example-datasets/-subjects/-m-a-t-h-s/index.html
+$dokka.location:ru.vladik.opendiary.example.datasets/ExampleDatasets.Subjects.PHYSICAL_CULTURE///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-open diary/ru.vladik.opendiary.example.datasets/-example-datasets/-subjects/-p-h-y-s-i-c-a-l_-c-u-l-t-u-r-e/index.html
+$dokka.location:ru.vladik.opendiary.example.datasets/ExampleDatasets.Subjects.RUSSIAN///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-open diary/ru.vladik.opendiary.example.datasets/-example-datasets/-subjects/-r-u-s-s-i-a-n/index.html
+$dokka.location:ru.vladik.opendiary.example.datasets/ExampleDatasets.Subjects///PointingToDeclaration/-open diary/ru.vladik.opendiary.example.datasets/-example-datasets/-subjects/index.html
+$dokka.location:ru.vladik.opendiary.example.datasets/ExampleDatasets.Subjects/title/#/PointingToDeclaration/-open diary/ru.vladik.opendiary.example.datasets/-example-datasets/-subjects/title.html
+$dokka.location:ru.vladik.opendiary.example.datasets/ExampleDatasets.Subjects/valueOf/#kotlin.String/PointingToDeclaration/-open diary/ru.vladik.opendiary.example.datasets/-example-datasets/-subjects/value-of.html
+$dokka.location:ru.vladik.opendiary.example.datasets/ExampleDatasets.Subjects/values/#/PointingToDeclaration/-open diary/ru.vladik.opendiary.example.datasets/-example-datasets/-subjects/values.html
+$dokka.location:ru.vladik.opendiary.example.datasets/ExampleDatasets///PointingToDeclaration/-open diary/ru.vladik.opendiary.example.datasets/-example-datasets/index.html
+$dokka.location:ru.vladik.opendiary.example.datasets/ExampleDatasets/ExampleApiUser/#/PointingToDeclaration/-open diary/ru.vladik.opendiary.example.datasets/-example-datasets/-example-api-user.html
+$dokka.location:ru.vladik.opendiary.example.datasets/ExampleDatasets/ExampleFeedPostsData/#/PointingToDeclaration/-open diary/ru.vladik.opendiary.example.datasets/-example-datasets/-example-feed-posts-data.html
+$dokka.location:ru.vladik.opendiary.example.datasets/ExampleDatasets/ExampleMarksData/#/PointingToDeclaration/-open diary/ru.vladik.opendiary.example.datasets/-example-datasets/-example-marks-data.html
+$dokka.location:ru.vladik.opendiary.example.datasets/ExampleDatasets/ExampleSchedule/#/PointingToDeclaration/-open diary/ru.vladik.opendiary.example.datasets/-example-datasets/-example-schedule.html
+$dokka.location:ru.vladik.opendiary.example.datasets/ExampleDatasets/getRandomText/#/PointingToDeclaration/-open diary/ru.vladik.opendiary.example.datasets/-example-datasets/get-random-text.html
+$dokka.location:ru.vladik.opendiary.example.datasets/ExampleDatasets/sentences/#/PointingToDeclaration/-open diary/ru.vladik.opendiary.example.datasets/-example-datasets/sentences.html
+$dokka.location:ru.vladik.opendiary.example.fragments////PointingToDeclaration/-open diary/ru.vladik.opendiary.example.fragments/index.html
+$dokka.location:ru.vladik.opendiary.example.fragments/MainFragment///PointingToDeclaration/-open diary/ru.vladik.opendiary.example.fragments/-main-fragment/index.html
+$dokka.location:ru.vladik.opendiary.example.fragments/MainFragment/MainFragment/#/PointingToDeclaration/-open diary/ru.vladik.opendiary.example.fragments/-main-fragment/-main-fragment.html
+$dokka.location:ru.vladik.opendiary.example.fragments/MainFragment/onViewCreated/#android.view.View#android.os.Bundle?/PointingToDeclaration/-open diary/ru.vladik.opendiary.example.fragments/-main-fragment/on-view-created.html
+$dokka.location:ru.vladik.opendiary.example.fragments/ScheduleFragment///PointingToDeclaration/-open diary/ru.vladik.opendiary.example.fragments/-schedule-fragment/index.html
+$dokka.location:ru.vladik.opendiary.example.fragments/ScheduleFragment/ScheduleFragment/#/PointingToDeclaration/-open diary/ru.vladik.opendiary.example.fragments/-schedule-fragment/-schedule-fragment.html
+$dokka.location:ru.vladik.opendiary.example.fragments/ScheduleFragment/onCreateView/#android.view.LayoutInflater#android.view.ViewGroup?#android.os.Bundle?/PointingToDeclaration/-open diary/ru.vladik.opendiary.example.fragments/-schedule-fragment/on-create-view.html
+$dokka.location:ru.vladik.opendiary.example.fragments/ScheduleFragment/onViewCreated/#android.view.View#android.os.Bundle?/PointingToDeclaration/-open diary/ru.vladik.opendiary.example.fragments/-schedule-fragment/on-view-created.html
 $dokka.location:ru.vladik.opendiary.ext.http////PointingToDeclaration/-open diary/ru.vladik.opendiary.ext.http/index.html
 $dokka.location:ru.vladik.opendiary.ext.http//addParam/okhttp3.HttpUrl#kotlin.String#kotlin.String/PointingToDeclaration/-open diary/ru.vladik.opendiary.ext.http/add-param.html
 $dokka.location:ru.vladik.opendiary.ext.http//enqueue/okhttp3.Call#kotlin.Function1[okhttp3.Response,kotlin.Unit]#kotlin.Function1[java.io.IOException,kotlin.Unit]/PointingToDeclaration/-open diary/ru.vladik.opendiary.ext.http/enqueue.html
@@ -854,6 +888,7 @@ $dokka.location:ru.vladik.opendiary.ext//isNotAdded/androidx.fragment.app.Fragme
 $dokka.location:ru.vladik.opendiary.ext//isNotNull/kotlin.Any?#/PointingToDeclaration/-open diary/ru.vladik.opendiary.ext/is-not-null.html
 $dokka.location:ru.vladik.opendiary.ext//isNull/kotlin.Any?#/PointingToDeclaration/-open diary/ru.vladik.opendiary.ext/is-null.html
 $dokka.location:ru.vladik.opendiary.ext//loadImageWithInitialsWrapper/io.getstream.avatarview.AvatarView#kotlin.String?#kotlin.String#kotlin.Function0[kotlin.Unit]?/PointingToDeclaration/-open diary/ru.vladik.opendiary.ext/load-image-with-initials-wrapper.html
+$dokka.location:ru.vladik.opendiary.ext//myApplication/android.content.Context#/PointingToDeclaration/-open diary/ru.vladik.opendiary.ext/my-application.html
 $dokka.location:ru.vladik.opendiary.ext//nullIfEmpty/kotlin.String?#/PointingToDeclaration/-open diary/ru.vladik.opendiary.ext/null-if-empty.html
 $dokka.location:ru.vladik.opendiary.ext//startActivity/android.app.Activity#java.lang.Class[android.app.Activity]#kotlin.Boolean/PointingToDeclaration/-open diary/ru.vladik.opendiary.ext/start-activity.html
 $dokka.location:ru.vladik.opendiary.ext//toExtendedDay/ru.vladik.opendiary.dnevnikapi.models.v7.DayBookDay#/PointingToDeclaration/-open diary/ru.vladik.opendiary.ext/to-extended-day.html
@@ -862,6 +897,10 @@ $dokka.location:ru.vladik.opendiary.ext//toExtendedLesson/ru.vladik.opendiary.dn
 $dokka.location:ru.vladik.opendiary.ext//toIdValueMap/kotlin.collections.Iterable[TypeParam(bounds=[ru.vladik.opendiary.dnevnikapi.models.Entity])]#/PointingToDeclaration/-open diary/ru.vladik.opendiary.ext/to-id-value-map.html
 $dokka.location:ru.vladik.opendiary.ext//toLessonIdValueMap/kotlin.collections.Iterable[ru.vladik.opendiary.dnevnikapi.models.v2.MarkV2]#/PointingToDeclaration/-open diary/ru.vladik.opendiary.ext/to-lesson-id-value-map.html
 $dokka.location:ru.vladik.opendiary.fragments////PointingToDeclaration/-open diary/ru.vladik.opendiary.fragments/index.html
+$dokka.location:ru.vladik.opendiary.fragments/MainFragment///PointingToDeclaration/-open diary/ru.vladik.opendiary.fragments/-main-fragment/index.html
+$dokka.location:ru.vladik.opendiary.fragments/MainFragment/MainFragment/#/PointingToDeclaration/-open diary/ru.vladik.opendiary.fragments/-main-fragment/-main-fragment.html
+$dokka.location:ru.vladik.opendiary.fragments/MainFragment/onResume/#/PointingToDeclaration/-open diary/ru.vladik.opendiary.fragments/-main-fragment/on-resume.html
+$dokka.location:ru.vladik.opendiary.fragments/MainFragment/onViewCreated/#android.view.View#android.os.Bundle?/PointingToDeclaration/-open diary/ru.vladik.opendiary.fragments/-main-fragment/on-view-created.html
 $dokka.location:ru.vladik.opendiary.fragments/ScheduleFragment///PointingToDeclaration/-open diary/ru.vladik.opendiary.fragments/-schedule-fragment/index.html
 $dokka.location:ru.vladik.opendiary.fragments/ScheduleFragment/ScheduleFragment/#/PointingToDeclaration/-open diary/ru.vladik.opendiary.fragments/-schedule-fragment/-schedule-fragment.html
 $dokka.location:ru.vladik.opendiary.fragments/ScheduleFragment/onCreateView/#android.view.LayoutInflater#android.view.ViewGroup?#android.os.Bundle?/PointingToDeclaration/-open diary/ru.vladik.opendiary.fragments/-schedule-fragment/on-create-view.html
@@ -997,13 +1036,10 @@ $dokka.location:ru.vladik.opendiary/AppConstants/HOUR_MINUTE_FORMAT/#/PointingTo
 $dokka.location:ru.vladik.opendiary/AppConstants/SP_LAST_USER_ID/#/PointingToDeclaration/-open diary/ru.vladik.opendiary/-app-constants/-s-p_-l-a-s-t_-u-s-e-r_-i-d.html
 $dokka.location:ru.vladik.opendiary/AppConstants/SP_NAME/#/PointingToDeclaration/-open diary/ru.vladik.opendiary/-app-constants/-s-p_-n-a-m-e.html
 $dokka.location:ru.vladik.opendiary/AppConstants/USERS_DB_NAME/#/PointingToDeclaration/-open diary/ru.vladik.opendiary/-app-constants/-u-s-e-r-s_-d-b_-n-a-m-e.html
-$dokka.location:ru.vladik.opendiary/MainFragment///PointingToDeclaration/-open diary/ru.vladik.opendiary/-main-fragment/index.html
-$dokka.location:ru.vladik.opendiary/MainFragment/MainFragment/#/PointingToDeclaration/-open diary/ru.vladik.opendiary/-main-fragment/-main-fragment.html
-$dokka.location:ru.vladik.opendiary/MainFragment/onResume/#/PointingToDeclaration/-open diary/ru.vladik.opendiary/-main-fragment/on-resume.html
-$dokka.location:ru.vladik.opendiary/MainFragment/onViewCreated/#android.view.View#android.os.Bundle?/PointingToDeclaration/-open diary/ru.vladik.opendiary/-main-fragment/on-view-created.html
 ru.vladik.opendiary
 ru.vladik.opendiary.activities
 ru.vladik.opendiary.adapters.recyclerview
+ru.vladik.opendiary.app
 ru.vladik.opendiary.dialogs
 ru.vladik.opendiary.dnevnikapi
 ru.vladik.opendiary.dnevnikapi.db
@@ -1015,6 +1051,9 @@ ru.vladik.opendiary.dnevnikapi.models.extended
 ru.vladik.opendiary.dnevnikapi.models.v2
 ru.vladik.opendiary.dnevnikapi.models.v7
 ru.vladik.opendiary.dnevnikapi.models.v7.deserializers
+ru.vladik.opendiary.example.activities
+ru.vladik.opendiary.example.datasets
+ru.vladik.opendiary.example.fragments
 ru.vladik.opendiary.ext
 ru.vladik.opendiary.ext.http
 ru.vladik.opendiary.fragments
